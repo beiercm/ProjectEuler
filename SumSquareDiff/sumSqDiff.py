@@ -15,4 +15,5 @@ def main():
 	n = 100
 	print(squareOfSum(n) - sumOfSquares(n))
 
+
 main()
