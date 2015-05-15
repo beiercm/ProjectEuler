@@ -2,10 +2,10 @@ public class EvenFib
 {
 	public static void main(String[] args)
 	{
-		System.out.println(evenFib(100));
+		System.out.println(findEvenFibSum(100));
 	}
 
-	 public static int evenFib(int upperLimit)
+	 public static int findEvenFibSum(int upperLimit)
 	 {
 	 	int sum = 0, f1 = 1, f2 = 1, f3 = 0;
 
