@@ -16,7 +16,6 @@ public class LargestPalinProd
 		return true;
 	}
 
-	//Recursive checker for fun	
 	public static Boolean isPalindrome2(String n)
 	{
 		return palinCheckRecur(n, 0, n.length() - 1);
