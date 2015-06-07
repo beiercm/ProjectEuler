@@ -1,16 +1,16 @@
 public class Prime10001st
 {
-
-	static int[] primeArray;
-
 	public static void main(String[] args)
 	{
-		int primeCount = 10001;
+		System.out.println(findNthPrime(10001));
+	}
 
-		primeArray = seedPrimeArray(primeCount);
+	public static int findNthPrime(int n)
+	{
+		int[] primeArray = seedPrimeArray(n);
 		primeArray = findPrimes(primeArray);
-		//printArray(primeArray);
-		System.out.println(primeArray[primeCount - 1]);
+
+		return primeArray[n - 1];
 	}
 
 	public static int[] seedPrimeArray(int n)
@@ -45,10 +45,4 @@ public class Prime10001st
 
 		return primeArray;	
 	}	
-
-	public static void printArray(int[] array)
-	{
-		for(int i = 0; i < array.length; i++)
-			System.out.println(array[i]);
-	}
 }
