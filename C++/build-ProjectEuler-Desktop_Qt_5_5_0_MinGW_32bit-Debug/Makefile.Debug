@@ -44,12 +44,28 @@ OBJECTS_DIR   = debug
 ####### Files
 
 SOURCES       = ..\ProjectEuler\main.cpp \
-		..\ProjectEuler\problem1.cpp 
+		..\ProjectEuler\problem1.cpp \
+		..\ProjectEuler\problem2.cpp \
+		..\ProjectEuler\linkedlist.cpp \
+		..\ProjectEuler\queue.cpp \
+		..\ProjectEuler\node.cpp 
 OBJECTS       = debug/main.o \
-		debug/problem1.o
+		debug/problem1.o \
+		debug/problem2.o \
+		debug/linkedlist.o \
+		debug/queue.o \
+		debug/node.o
 
-DIST          =  problem1.h ..\ProjectEuler\main.cpp \
-		..\ProjectEuler\problem1.cpp
+DIST          =  problem1.h \
+		problem2.h \
+		linkedlist.h \
+		queue.h \
+		node.h ..\ProjectEuler\main.cpp \
+		..\ProjectEuler\problem1.cpp \
+		..\ProjectEuler\problem2.cpp \
+		..\ProjectEuler\linkedlist.cpp \
+		..\ProjectEuler\queue.cpp \
+		..\ProjectEuler\node.cpp
 QMAKE_TARGET  = ProjectEuler
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = ProjectEuler.exe
@@ -88,7 +104,7 @@ dist:
 	$(ZIP) ProjectEuler.zip $(SOURCES) $(DIST) ..\ProjectEuler\ProjectEuler.pro G:\Qt\5.5\mingw492_32\mkspecs\features\spec_pre.prf G:\Qt\5.5\mingw492_32\mkspecs\qdevice.pri G:\Qt\5.5\mingw492_32\mkspecs\features\device_config.prf G:\Qt\5.5\mingw492_32\mkspecs\qconfig.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dcore.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dcore_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dinput.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dinput_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquick.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquick_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquickrenderer.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3dquickrenderer_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3drenderer.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_3drenderer_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_axbase.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_axbase_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_axcontainer.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_axcontainer_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_axserver.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_axserver_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_bluetooth.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_bluetooth_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_bootstrap_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_clucene_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_concurrent.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_concurrent_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_core.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_core_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_dbus.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_dbus_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_declarative.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_declarative_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_designer.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_designer_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_designercomponents_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_enginio.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_enginio_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_gui.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_gui_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_help.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_help_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_location.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_location_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_multimedia.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_multimedia_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_multimediawidgets.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_network.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_network_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_nfc.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_nfc_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_opengl.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_opengl_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_openglextensions.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_openglextensions_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_platformsupport_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_positioning.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_positioning_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_printsupport.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_printsupport_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_qml.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_qml_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_qmldevtools_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_qmltest.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_qmltest_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_quick.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_quick_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_quickparticles_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_quickwidgets.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_quickwidgets_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_script.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_script_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_scripttools.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_scripttools_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_sensors.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_sensors_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_serialport.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_serialport_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_sql.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_sql_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_svg.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_svg_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_testlib.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_testlib_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_uiplugin.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_uitools.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_uitools_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_webchannel.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_webchannel_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_webkit.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_webkit_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_webkitwidgets.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_websockets.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_websockets_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_widgets.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_widgets_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_winextras.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_winextras_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_xml.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_xml_private.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_xmlpatterns.pri G:\Qt\5.5\mingw492_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri G:\Qt\5.5\mingw492_32\mkspecs\features\qt_functions.prf G:\Qt\5.5\mingw492_32\mkspecs\features\qt_config.prf G:\Qt\5.5\mingw492_32\mkspecs\features\win32\qt_config.prf G:\Qt\5.5\mingw492_32\mkspecs\win32-g++\qmake.conf G:\Qt\5.5\mingw492_32\mkspecs\features\spec_post.prf G:\Qt\5.5\mingw492_32\mkspecs\features\exclusive_builds.prf G:\Qt\5.5\mingw492_32\mkspecs\features\default_pre.prf G:\Qt\5.5\mingw492_32\mkspecs\features\win32\default_pre.prf ..\ProjectEuler\deployment.pri G:\Qt\5.5\mingw492_32\mkspecs\features\resolve_config.prf G:\Qt\5.5\mingw492_32\mkspecs\features\exclusive_builds_post.prf G:\Qt\5.5\mingw492_32\mkspecs\features\default_post.prf G:\Qt\5.5\mingw492_32\mkspecs\features\build_pass.prf G:\Qt\5.5\mingw492_32\mkspecs\features\win32\console.prf G:\Qt\5.5\mingw492_32\mkspecs\features\win32\rtti.prf G:\Qt\5.5\mingw492_32\mkspecs\features\precompile_header.prf G:\Qt\5.5\mingw492_32\mkspecs\features\warn_on.prf G:\Qt\5.5\mingw492_32\mkspecs\features\testcase_targets.prf G:\Qt\5.5\mingw492_32\mkspecs\features\exceptions.prf G:\Qt\5.5\mingw492_32\mkspecs\features\yacc.prf G:\Qt\5.5\mingw492_32\mkspecs\features\lex.prf ..\ProjectEuler\ProjectEuler.pro  NO_PCH_SOURCES YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.o debug\problem1.o
+	-$(DEL_FILE) debug\main.o debug\problem1.o debug\problem2.o debug\linkedlist.o debug\queue.o debug\node.o
 
 distclean: clean 
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -110,11 +126,26 @@ compiler_clean:
 
 ####### Compile
 
-debug/main.o: ../ProjectEuler/main.cpp 
+debug/main.o: ../ProjectEuler/main.cpp ../ProjectEuler/linkedlist.h \
+		../ProjectEuler/problem1.h \
+		../ProjectEuler/problem2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\ProjectEuler\main.cpp
 
 debug/problem1.o: ../ProjectEuler/problem1.cpp ../ProjectEuler/problem1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\problem1.o ..\ProjectEuler\problem1.cpp
+
+debug/problem2.o: ../ProjectEuler/problem2.cpp ../ProjectEuler/problem2.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\problem2.o ..\ProjectEuler\problem2.cpp
+
+debug/linkedlist.o: ../ProjectEuler/linkedlist.cpp ../ProjectEuler/linkedlist.h \
+		../ProjectEuler/node.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\linkedlist.o ..\ProjectEuler\linkedlist.cpp
+
+debug/queue.o: ../ProjectEuler/queue.cpp ../ProjectEuler/queue.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\queue.o ..\ProjectEuler\queue.cpp
+
+debug/node.o: ../ProjectEuler/node.cpp ../ProjectEuler/node.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\node.o ..\ProjectEuler\node.cpp
 
 ####### Install
 
